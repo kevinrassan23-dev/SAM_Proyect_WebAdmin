@@ -13,7 +13,9 @@
  * OPERACIONES: GET, POST, PUT, DELETE, etc...
  * 
  * ¡DATOS MÍNIMOS!
- */
+
 
 import { db } from '../../config/firebaseConfig';
 import { collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+
+ */
