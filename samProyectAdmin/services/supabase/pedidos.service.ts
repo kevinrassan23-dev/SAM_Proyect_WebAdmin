@@ -1,12 +1,12 @@
 /**
  * Aquí van los métodos para obtener los datos
- * de la tabla administradores en supabase:
+ * de la tabla pedidos en supabase:
  * 
- * EJEMPLO: Obtenemos un medicamento por ID de la tabla de 'ADMINISTRADORES' ->
+ * EJEMPLO: Obtenemos un pedido por ID de la tabla de 'PEDIDOS' ->
  * 
- * export const getAdminById = async (id) => {
+ * export const getPedidoById = async (id) => {
  * const { data, error } = await supabase
- *      .from('administradores')
+ *      .from('pedidos')
  *      .select('*')
  *      .eq('id', id)
  *      .single();
@@ -18,4 +18,4 @@
  * OPERACIONES: GET, POST, PUT, DELETE, etc...
  * 
  */
-import { supabase } from '../../config/supabaseClient';
+// import { supabase } from '../../config/supabaseClient';
