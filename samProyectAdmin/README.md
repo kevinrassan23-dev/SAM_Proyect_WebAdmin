@@ -61,3 +61,42 @@ Desarrollo - Gabriel:
 Desarrollo - Hector:
 
 ```
+
+## Git y GitHub - (Resolución de conflictos):
+Si desea actualizar la estructura base del proyecto y desea subirlo a una rama auxiliar a la rama principal (main), es posible que GitHub se bloquee porque no puede manejar la resolución de varios confictos simultáneos, para ello, desde nuestro IDE local, seguiremos un proceso para sincronizar las 2 Ramas sin hacerlo sin interfaz gráfica:
+
+1. Crear nueva rama:
+   ```bash
+   git checkout -b tu-rama
+   ```
+2. Cambiar de rama (si no estamos en ella):
+   ```bash
+   git checkout tu-rama
+   ```
+
+3. Traer los cambios desde Main:
+   ```bash
+   git fetch origin
+   ```
+4. Juntar las Ramas Main - Tu_Rama_Nueva:
+   ```bash
+   git merge origin/main
+   ```
+5. Hacer cambios soobre el directorio actual tu_rama -> main
+    ```bash
+   git add .
+   ```
+6. Hacemos commit y añadimos un mensaje con parámetro -m (opcional)
+   ```bash
+   git commit -m "Resuelto conflictos en main"
+   ```
+7. Hacemos push y subimos los nuevos cambios:
+   ```bash
+   git push origin tu-rama
+   ```
+Resultado: La rama main se desbloqueará y estará abierta a nuevos cambios simples.
+
+
+
+
+   
