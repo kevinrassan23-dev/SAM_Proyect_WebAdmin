@@ -1,5 +1,5 @@
 /**
- * Aquí generamos Spinner o Drawer para gestionar las opciones de DisplayShop.tsx
+ * Aquí generamos un Spinner o Drawer para gestionar las opciones de DisplayShop.tsx
  * 
  * Opciones:
  * - Mostrar Medicamentos
