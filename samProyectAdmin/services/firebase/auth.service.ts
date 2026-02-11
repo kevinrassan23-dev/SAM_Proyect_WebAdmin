@@ -8,4 +8,4 @@
  * export const logout = () => auth.signOut();
  */
 
-import { auth } from '../../config/firebaseConfig';
+// import { auth } from '../../config/firebaseConfig';
