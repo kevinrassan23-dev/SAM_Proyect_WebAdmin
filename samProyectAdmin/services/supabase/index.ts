@@ -3,3 +3,4 @@
  * de los imports (Opcional)
  * 
  */
+export * from './auth.service';

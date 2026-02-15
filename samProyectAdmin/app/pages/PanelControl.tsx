@@ -6,11 +6,11 @@ import { styles } from "../../styles/PanelControlStyle";
 function PanelControl() {
 
     const asyncronicData = () => {
-        router.push({ pathname: "/pages/DisplayGov"});
+        router.push({ pathname: "/pages/DisplayGOV"});
     }
 
     const farmaciaData = () => {
-        router.push({ pathname: "/pages/DisplayShop"});
+        router.push({ pathname: "/pages/DisplaySHOP"});
     }
 
     const logout = () => {

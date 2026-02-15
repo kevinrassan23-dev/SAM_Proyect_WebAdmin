@@ -1,12 +1,17 @@
-/**
- * Aquí van las funciones de autenticación de supabase:
- * 
- * EJEMPLO: un método para verificar usuario y contraseña desde supabase ->
- * 
- * export const Login = (user, password) =>
- * supabase.auth.verificarUserPassword({ user, password });
- * export const signOut = () => supabase.auth.signOut();
- * 
- */
+import { supabase } from '../../config/supabaseClient';
 
-// import { supabase } from '../../config/supabaseClient';
+export const loginAdmin = async (usuario: string, password: string) => {
+  const { data, error } = await supabase
+    .from('administradores')
+    .select('*')
+    .eq('usuario', usuario)
+    .eq('password', password)
+    .single();
+
+  if (error || !data) {
+    throw new Error('Usuario o contraseña incorrectos');
+  }
+
+  return data;
+};
+
