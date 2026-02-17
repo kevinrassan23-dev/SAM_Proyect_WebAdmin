@@ -52,3 +52,5 @@ Join our community of developers creating universal apps.
 npm install bcrypt
 npm install -D @types/bcrypt
 npm install @react-native-async-storage/async-storage
+npx expo install react-native-web react-dom @expo/metro-runtime
+npx expo install @react-native-async-storage/async-storage
