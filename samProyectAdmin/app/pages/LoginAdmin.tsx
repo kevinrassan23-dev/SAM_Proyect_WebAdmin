@@ -1,7 +1,8 @@
+// pages/LoginAdmin.tsx
 import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, Alert } from "react-native";
 import { router } from "expo-router";
-import { loginAdmin } from "../../services/supabase/auth.service";
+import { loginAdminDirect } from "../../services/supabase/auth.service";
 
 const LoginAdmin = () => {
   const [usuario, setUsuario] = useState("");
@@ -16,9 +17,11 @@ const LoginAdmin = () => {
 
     try {
       setLoading(true);
-      await loginAdmin(usuario, password);
+      const admin = await loginAdminDirect(usuario, password);
+      console.log("Login exitoso:", admin);
       router.replace("/pages/PanelControl");
     } catch (error: any) {
+      console.error("Error completo:", error);
       Alert.alert("Login incorrecto", error.message);
     } finally {
       setLoading(false);
@@ -35,6 +38,7 @@ const LoginAdmin = () => {
         placeholder="Usuario"
         value={usuario}
         onChangeText={setUsuario}
+        autoCapitalize="none"
         style={{
           borderWidth: 1,
           marginBottom: 15,
@@ -48,6 +52,7 @@ const LoginAdmin = () => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
+        autoCapitalize="none"
         style={{
           borderWidth: 1,
           marginBottom: 20,
@@ -58,8 +63,9 @@ const LoginAdmin = () => {
 
       <Pressable
         onPress={handleLogin}
+        disabled={loading}
         style={{
-          backgroundColor: "#007AFF",
+          backgroundColor: loading ? "#ccc" : "#007AFF",
           padding: 15,
           borderRadius: 5,
           alignItems: "center",

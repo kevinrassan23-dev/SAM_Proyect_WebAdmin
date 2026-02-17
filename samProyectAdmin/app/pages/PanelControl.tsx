@@ -1,7 +1,9 @@
+// pages/PanelControl.tsx
 import { router } from "expo-router";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { styles } from "../../styles/PanelControlStyle";
+import { logoutAdmin } from "../../services/supabase/auth.service";
 
 function PanelControl() {
 
@@ -13,13 +15,13 @@ function PanelControl() {
         router.push({ pathname: "/pages/DisplaySHOP"});
     }
 
-    const logout = () => {
-        router.push("/pages/LoginAdmin")
+    const logout = async () => {
+        await logoutAdmin();
+        router.replace("/pages/LoginAdmin");
     }
 
     return (
         <View style={styles.container}>
-
             <Text style={styles.title}>Opciones de administrador</Text>
 
             <View style={styles.formaPagoContainer}>

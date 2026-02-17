@@ -3,12 +3,10 @@
   
   EJEMPLO:*/
 
+// config/supabaseClient.ts
 import { createClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL = 'https://rokzxjuxifpxsytmqmvm.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_2z-nfrCUbPF5zf9VwcZFbA_YxLKBYMp';
+const SUPABASE_ANON_KEY = 'sb_secret_p_LuqdmtT5bCQWyTUHTbRA_08zPQfn9';
 
-export const supabase = createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);

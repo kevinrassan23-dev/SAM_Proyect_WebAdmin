@@ -51,3 +51,4 @@ Join our community of developers creating universal apps.
 
 npm install bcrypt
 npm install -D @types/bcrypt
+npm install @react-native-async-storage/async-storage
