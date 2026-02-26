@@ -1,5 +1,3 @@
-/**
- * Este archivo se utiliza para acortar las rutas
- * de los imports (Opcional)
- * 
- */
+export * from './pacientes.service';
+export * from './recetas.service';
+export * from './recetas_medicamentos.service';

@@ -15,6 +15,8 @@ function ErrorPage() {
                 return "Solicitud no válida. Por favor, revise los datos de su pedido nuevamente.";
             case "404":
                 return "El sitio solicitado no se encuentra.";
+            case "406":
+                return "El servicio rechazó esta solicitud.";
             case "408":
                 return "La solicitud tardó demasiado. Inténtelo de nuevo.";
             case "409":
@@ -63,7 +65,7 @@ function ErrorPage() {
             </Text>
 
             {/* Botón para volver al inicio */}
-            <Pressable style={styles.button} onPress={() => router.push("/screens/Hall")}>
+            <Pressable style={styles.button} onPress={() => router.push("/pages/LoginAdmin")}>
                 <Text style={styles.buttonText}>VOLVER</Text>
             </Pressable>
         </View>

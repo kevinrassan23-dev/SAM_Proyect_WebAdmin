@@ -1,32 +1,30 @@
 import React from "react";
-import { Stack, usePathname } from "expo-router";
-import { View, Image } from "react-native";
-import { styles } from "../styles/LayoutStyle";
 
 // HEADER APP BAR 
+import { View, Image } from "react-native";
+import { Stack } from "expo-router";
+import { usePathname } from "expo-router";
+import { styles } from "../styles/LayoutStyle";
+
 function RootLayout() {
+  const SAM_LOGO = require("../assets/images/sam_logo.png");
+  const pathname = usePathname();
 
-    const SAM_LOGO = require("../assets/images/sam_logo.png");
+  const hideHeader = pathname === "/pages/LoginAdmin" || pathname === "/";
 
-    const pathname = usePathname();
+  return (
+    <View style={styles.container}>
+      {!hideHeader && (
+        <View style={styles.header}>
+          <Image source={SAM_LOGO} style={styles.logo} />
+        </View>
+      )}
 
-    // Ocultar logo SOLO en Home
-    const hideHeader = pathname === "/pages/LoginAdmin" || pathname === "/";
-
-    return (
-        <>
-            <Stack screenOptions={{ headerShown: false }} />
-
-            {/* Ocultamos la app bar solo para /Home ya que es la única 
-                que lleva el logo de presentación.
-            */}
-            {!hideHeader && (
-                <View style={styles.header}>
-                    <Image source={SAM_LOGO} style={styles.logo} />
-                </View>
-            )}
-        </>
-    );
+      <View style={[styles.content, hideHeader && styles.contentFullHeight]}>
+        <Stack screenOptions={{ headerShown: false }} />
+      </View>
+    </View>
+  );
 }
 
 export default RootLayout;

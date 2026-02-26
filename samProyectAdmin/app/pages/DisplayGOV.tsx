@@ -1,11 +1,3 @@
-/**
- * Administramos los datos de las colecciones de Firebase
- * 
- * (El archivo debe ser en formato .json)
- * 
- * (SOLO MOSTRAR DATOS MÍNIMOS)
- */
-
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
@@ -14,66 +6,67 @@ import { styles } from "../../styles/DisplayGOVStyle";
 
 function DisplayGOV() {
 
-    const [MostrarDatos, setMostrarDatos] = useState(false);
-
-
-    const DatosMostrados = () => {
-        setMostrarDatos(true)
+    const buscar = () => {
+        router.push("/pages/BuscarPacientesRecetas");
     }
 
-    const DejarDatosMostrados = () => {
-        setMostrarDatos(false)
+    const insertar = () => {
+        router.push("/pages/InsertarPacientesRecetas");
+    }
+
+    const actualizar = () => {
+        router.push("/pages/ActualizarPacientesRecetas");
+    }
+
+    const eliminar = () => {
+        router.push("/pages/EliminarPacientesRecetas");
     }
 
     const volver = () => {
-        router.push({ pathname: "/pages/PanelControl" });
+        router.push("/pages/PanelControl");
     }
 
-
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.outerScroll} contentContainerStyle={styles.outerScrollContent}>
+            <View style={styles.container}>
+                <View style={styles.vista}>
+                    <Pressable 
+                        style={[styles.button]} 
+                        onPress={buscar}
+                    >
+                        <Text style={styles.buttonText}>BUSCAR</Text>
+                    </Pressable>
 
-            <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
+                    <Pressable 
+                        style={[styles.button]} 
+                        onPress={insertar}
+                    >
+                        <Text style={styles.buttonText}>INSERTAR</Text>
+                    </Pressable>
 
-            {MostrarDatos &&
-                (<View style={styles.listContainer}>
-                    <ScrollView contentContainerStyle={styles.scrollContent}>
+                    <Pressable 
+                        style={[styles.button]} 
+                        onPress={actualizar}
+                    >
+                        <Text style={styles.buttonText}>ACTUALIZAR</Text>
+                    </Pressable>
 
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
-                        <Text style={styles.title}>DATOS GUBERNAMENTALES</Text>
+                    <Pressable 
+                        style={[styles.button]} 
+                        onPress={eliminar}
+                    >
+                        <Text style={styles.buttonText}>ELIMINAR</Text>
+                    </Pressable>
 
-
-                    </ScrollView>
-                </View>)}
-
-
-            <View style={styles.vista}>
-
-                <Pressable style={[styles.button]} onPress={DatosMostrados}>
-                    <Text style={styles.buttonText}>MOSTRAR DATOS</Text>
-                </Pressable>
-
-                <Pressable style={[styles.button]} onPress={DejarDatosMostrados}>
-                    <Text style={styles.buttonText}>DEJAR DE MOSTRAR DATOS</Text>
-                </Pressable>
-
-                <Pressable style={[styles.button]} onPress={volver}>
-                    <Text style={styles.buttonText}>VOLVER</Text>
-                </Pressable>
-
+                    <Pressable 
+                        style={[styles.button]} 
+                        onPress={volver}
+                    >
+                        <Text style={styles.buttonText}>VOLVER</Text>
+                    </Pressable>
+                </View>
             </View>
-        </View >
+        </ScrollView>
     );
 }
 

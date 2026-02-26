@@ -18,4 +18,5 @@
  * OPERACIONES: GET, POST, PUT, DELETE, etc...
  * 
  */
-// import { supabase } from '../../config/supabaseClient';
+
+// import { createClient } from '@supabase/supabase-js';

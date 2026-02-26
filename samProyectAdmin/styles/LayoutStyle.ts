@@ -2,35 +2,50 @@ import { Platform, StyleSheet } from "react-native";
 import theme from "../theme/Theme";
 
 export const styles = StyleSheet.create({
-    header: {
-        position: Platform.OS === "web" ? "relative" : "absolute",
+    container: {
+    flex: 1,
+  },
 
-        top: Platform.OS === "web" ? 0 : 40,
-        right: Platform.OS === "web" ? 0 : 20,
+  header: {
+    backgroundColor: "#fff",
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+    justifyContent: "center",
+    alignItems: "center",
+    ...(Platform.OS === "web" && {
+      width: "100%" as any,
+      paddingVertical: 16,
+      paddingHorizontal: 24,
+      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" as any,
+      minHeight: 70,
+    }),
+  },
 
-        height: Platform.OS === "web" ? 80 : 60,
-        width: "100%",
+  logo: {
+    width: 120,
+    height: 40,
+    resizeMode: "contain",
+    marginLeft: "auto",
+    ...(Platform.OS === "web" && {
+      width: 150 as any,
+      height: 50 as any,
+      marginLeft: "auto" as any,
+      marginRight: 20 as any,
+    }),
+  },
 
-        backgroundColor: theme.colors.background,
-        alignItems: "flex-end",
-        justifyContent: "center",
+  content: {
+    flex: 1,
+    ...(Platform.OS === "web" && {
+      flex: 1,
+      width: "100%" as any,
+      marginTop: 70 as any,
+    }),
+  },
 
-        paddingRight: Platform.OS === "web" ? 24 : 10,
-        paddingTop: Platform.OS === "web" ? 16 : 0,
-
-        zIndex: 10,
-
-        // SOLO WEB → centramos el contenido
-        ...(Platform.OS === "web" && {
-        maxWidth: 1200,
-        marginHorizontal: "auto",
-        }),
-    },
-
-    logo: {
-        width: Platform.OS === "web" ? 140 : 100,
-        height: Platform.OS === "web" ? 60 : 60,
-        resizeMode: "contain",
-    },
-
+  contentFullHeight: {
+    marginTop: 0,
+  },
 });

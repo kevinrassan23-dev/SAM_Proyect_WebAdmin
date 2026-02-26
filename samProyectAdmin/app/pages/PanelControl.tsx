@@ -6,25 +6,25 @@ import { styles } from "../../styles/PanelControlStyle";
 function PanelControl() {
 
     const asyncronicData = () => {
-        router.push({ pathname: "/pages/DisplayGov"});
+        router.push("/pages/DisplayGOV");
     }
 
     const farmaciaData = () => {
-        router.push({ pathname: "/pages/DisplayShop"});
+        router.push("/pages/DisplaySHOP");
     }
 
-    const logout = () => {
-        router.push("/pages/LoginAdmin")
+    const logout = async () => {
+        router.replace("/pages/LoginAdmin");
     }
 
     return (
         <View style={styles.container}>
+            <View style={styles.panelControlContainer}>
 
-            <Text style={styles.title}>Opciones de administrador</Text>
-
-            <View style={styles.formaPagoContainer}>
+                <Text style={styles.title}>OPCIONES:</Text>
+                
                 <Pressable style={styles.button} onPress={asyncronicData}>
-                    <Text style={styles.buttonText}>DATOS ASÍNCRONOS</Text>
+                    <Text style={styles.buttonText}>DATOS OFICIALES</Text>
                 </Pressable>
 
                 <Pressable style={styles.button} onPress={farmaciaData}>
