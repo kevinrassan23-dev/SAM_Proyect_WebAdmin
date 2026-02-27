@@ -53,10 +53,16 @@ npm install -g expo-cli -> (Expo-CLI Para confictos de dependencias JSON, Útil 
 
 npx expo-doctor -> (Depende de Expo-CLI, se utiliza para hacer test instantáneos y resolver conflictos entre dependencias JSON).
 
+npm install bcrypt -> Librería para hashear y cifrar datos.
+
+Si la anterior falla, instalar esta -> npm install --save-dev @types/bcryptjs
+
 
 Desarrollo - Pablo:
+npm install @supabase/supabase-js -> Instala configuración de Supabase
 
 Desarrollo - Gabriel:
+npm install firebase -> Instala configuración de Firebase
 
 Desarrollo - Hector:
 
