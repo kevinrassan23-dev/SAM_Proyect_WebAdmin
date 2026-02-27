@@ -5,20 +5,12 @@ import { styles } from "../../styles/DisplaySHOPStyle";
 
 function DisplaySHOP() {
 
-    const buscar = () => {
-        router.push("/pages/BuscarMedicamentosPedidos");
+    const pedidos = () => {
+        router.push("/pages/MostrarPedidos");
     }
 
-    const insertar = () => {
-        router.push("/pages/InsertarMedicamentos");
-    }
-
-    const actualizar = () => {
-        router.push("/pages/ActualizarMedicamentos");
-    }
-
-    const eliminar = () => {
-        router.push("/pages/EliminarMedicamentos");
+    const medicamentos = () => {
+        router.push("/pages/DashboardMedicamentos");
     }
 
     const volver = () => {
@@ -32,30 +24,16 @@ function DisplaySHOP() {
 
                     <Pressable 
                         style={[styles.button]} 
-                        onPress={buscar}
+                        onPress={pedidos}
                     >
-                        <Text style={styles.buttonText}>BUSCAR MEDICAMENTOS</Text>
+                        <Text style={styles.buttonText}>PEDIDOS</Text>
                     </Pressable>
 
                     <Pressable 
                         style={[styles.button]} 
-                        onPress={insertar}
+                        onPress={medicamentos}
                     >
-                        <Text style={styles.buttonText}>INSERTAR MEDICAMENTOS</Text>
-                    </Pressable>
-
-                    <Pressable 
-                        style={[styles.button]} 
-                        onPress={actualizar}
-                    >
-                        <Text style={styles.buttonText}>ACTUALIZAR MEDICAMENTOS</Text>
-                    </Pressable>
-
-                    <Pressable 
-                        style={[styles.button]} 
-                        onPress={eliminar}
-                    >
-                        <Text style={styles.buttonText}>ELIMINAR MEDICAMENTOS</Text>
+                        <Text style={styles.buttonText}>MEDICAMENTOS</Text>
                     </Pressable>
 
                     <Pressable 

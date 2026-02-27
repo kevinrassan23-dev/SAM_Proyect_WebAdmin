@@ -42,30 +42,6 @@ export const styles = StyleSheet.create({
     }),
   },
 
-  subtitle: {
-    fontSize: theme.fontSize.large,
-    fontWeight: "bold",
-    color: theme.colors.primary,
-    marginVertical: theme.spacing(2),
-    textAlign: "center",
-  },
-
-  vista: {
-    flexDirection: "column",
-    gap: 16,
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    marginTop: theme.spacing(2),
-    ...(Platform.OS === "web" && {
-      width: "100%",
-      maxWidth: 600,
-      marginHorizontal: "auto",
-      paddingHorizontal: theme.spacing(4),
-      gap: 20,
-    }),
-  },
-
   formContainer: {
     width: "100%",
     maxWidth: 500,
@@ -90,6 +66,13 @@ export const styles = StyleSheet.create({
     marginBottom: theme.spacing(1),
   },
 
+  labelSecundario: {
+    fontSize: theme.fontSize.normal,
+    fontWeight: "500",
+    color: theme.colors.textPrimary,
+    marginBottom: theme.spacing(0.5),
+  },
+
   input: {
     borderWidth: 1,
     borderColor: theme.colors.success,
@@ -100,65 +83,29 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.background,
   },
 
-  textArea: {
-    minHeight: 80,
-    textAlignVertical: "top",
-  },
-
-  tipoSelector: {
-    flexDirection: "row",
-    gap: 8,
-    justifyContent: "space-between",
-  },
-
-  tipoButton: {
-    flex: 1,
-    paddingVertical: theme.spacing(1),
-    paddingHorizontal: theme.spacing(1),
-    borderWidth: 1,
-    borderColor: theme.colors.secondary,
-    borderRadius: 6,
-    alignItems: "center",
+  filtroFechas: {
     backgroundColor: "#f5f5f5",
-  },
-
-  tipoButtonActive: {
-    backgroundColor: theme.colors.secondary,
-    borderColor: theme.colors.secondary,
-  },
-
-  tipoButtonText: {
-    fontSize: theme.fontSize.normal,
-    color: theme.colors.secondary,
-    fontWeight: "500",
-    textTransform: "capitalize",
-  },
-
-  tipoButtonTextActive: {
-    color: "#fff",
+    padding: theme.spacing(2),
+    borderRadius: 8,
+    marginBottom: theme.spacing(2),
   },
 
   button: {
     backgroundColor: theme.colors.secondary,
     width: "100%",
-    maxWidth: 360,
-    flexDirection: "row",
     paddingVertical: theme.spacing(2),
     borderRadius: 8,
-    marginBottom: theme.spacing(1),
     alignItems: "center",
     justifyContent: "center",
-    gap: 8,
+    marginBottom: theme.spacing(1),
     ...(Platform.OS === "web" && {
-      width: "100%",
-      maxWidth: "100%",
       paddingVertical: theme.spacing(2.5),
       cursor: "pointer" as any,
       transition: "all 0.3s ease" as any,
     }),
   },
 
-  buttonInsert: {
+  buttonSearch: {
     backgroundColor: theme.colors.primary,
   },
 
@@ -168,10 +115,6 @@ export const styles = StyleSheet.create({
 
   buttonCancel: {
     backgroundColor: theme.colors.error,
-  },
-
-  buttonDisabled: {
-    opacity: 0.5,
   },
 
   buttonText: {
@@ -184,21 +127,42 @@ export const styles = StyleSheet.create({
     }),
   },
 
-  errorText: {
-    fontSize: 14,
-    color: "#dc3545",
-    marginBottom: theme.spacing(2),
-    paddingHorizontal: theme.spacing(1),
-    fontWeight: "500",
-    backgroundColor: "#ffe6e6",
-    padding: theme.spacing(1.5),
-    borderRadius: 6,
+  resultadosContainer: {
+    marginVertical: theme.spacing(2),
+  },
+
+  subtitle: {
+    fontSize: theme.fontSize.large,
+    fontWeight: "bold",
+    color: theme.colors.primary,
+    marginVertical: theme.spacing(1),
+  },
+
+  tarjeta: {
+    backgroundColor: "#f9f9f9",
     borderLeftWidth: 4,
-    borderLeftColor: "#dc3545",
+    borderLeftColor: theme.colors.primary,
+    padding: theme.spacing(2),
+    marginVertical: theme.spacing(1),
+    borderRadius: 8,
+  },
+
+  tarjetaTitulo: {
+    fontSize: theme.fontSize.large,
+    fontWeight: "bold",
+    color: theme.colors.primary,
+    marginBottom: theme.spacing(1),
+  },
+
+  tarjetaTexto: {
+    fontSize: theme.fontSize.normal,
+    color: theme.colors.textPrimary,
+    marginVertical: theme.spacing(0.5),
   },
 
   botonesContainer: {
-    marginTop: theme.spacing(2),
+    flexDirection: "column",
     gap: 8,
+    marginTop: theme.spacing(2),
   },
 });

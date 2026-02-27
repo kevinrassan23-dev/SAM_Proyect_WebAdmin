@@ -42,38 +42,6 @@ export const styles = StyleSheet.create({
     }),
   },
 
-  subtitle: {
-    fontSize: theme.fontSize.large,
-    fontWeight: "bold",
-    color: theme.colors.primary,
-    marginVertical: theme.spacing(2),
-    textAlign: "center",
-  },
-
-  subtitleResultados: {
-    fontSize: theme.fontSize.large,
-    fontWeight: "bold",
-    color: theme.colors.primary,
-    marginBottom: theme.spacing(2),
-    textAlign: "center",
-  },
-
-  vista: {
-    flexDirection: "column",
-    gap: 16,
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    marginTop: theme.spacing(2),
-    ...(Platform.OS === "web" && {
-      width: "100%",
-      maxWidth: 600,
-      marginHorizontal: "auto",
-      paddingHorizontal: theme.spacing(4),
-      gap: 20,
-    }),
-  },
-
   formContainer: {
     width: "100%",
     maxWidth: 500,
@@ -108,21 +76,14 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.background,
   },
 
-  botonesBusqueda: {
-    flexDirection: "row",
-    gap: 8,
-    marginBottom: theme.spacing(2),
-  },
-
   button: {
     backgroundColor: theme.colors.secondary,
-    flex: 1,
-    flexDirection: "row",
+    width: "100%",
     paddingVertical: theme.spacing(2),
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
-    gap: 8,
+    marginBottom: theme.spacing(1),
     ...(Platform.OS === "web" && {
       paddingVertical: theme.spacing(2.5),
       cursor: "pointer" as any,
@@ -130,66 +91,26 @@ export const styles = StyleSheet.create({
     }),
   },
 
-  buttonPrimary: {
-    backgroundColor: theme.colors.primary,
-    flex: undefined,
-    width: "100%",
-    marginBottom: theme.spacing(1),
-  },
-
-  buttonSecondary: {
-    backgroundColor: theme.colors.secondary,
-    flex: undefined,
-    width: "100%",
-    marginBottom: theme.spacing(1),
-  },
-
   buttonSearch: {
     backgroundColor: theme.colors.primary,
   },
 
-  buttonInfo: {
-    backgroundColor: "#2196F3",
+  buttonDelete: {
+    backgroundColor: theme.colors.error,
   },
 
   buttonCancel: {
     backgroundColor: theme.colors.error,
-    flex: undefined,
-    width: "100%",
-    marginBottom: theme.spacing(1),
-  },
-
-  buttonDisabled: {
-    opacity: 0.5,
   },
 
   buttonText: {
     color: theme.colors.textSecondary,
-    fontSize: theme.fontSize.normal,
+    fontSize: theme.fontSize.large,
     fontWeight: "bold",
     textAlign: "center",
     ...(Platform.OS === "web" && {
-      fontSize: 14,
+      fontSize: 16,
     }),
-  },
-
-  errorText: {
-    fontSize: 14,
-    color: "#dc3545",
-    marginBottom: theme.spacing(2),
-    paddingHorizontal: theme.spacing(1),
-    fontWeight: "500",
-    backgroundColor: "#ffe6e6",
-    padding: theme.spacing(1.5),
-    borderRadius: 6,
-    borderLeftWidth: 4,
-    borderLeftColor: "#dc3545",
-  },
-
-  resultadosContainer: {
-    marginVertical: theme.spacing(2),
-    width: "100%",
-    maxHeight: 600,
   },
 
   tarjeta: {
@@ -220,44 +141,11 @@ export const styles = StyleSheet.create({
     marginTop: theme.spacing(0.5),
   },
 
-  tarjetaTexto: {
-    fontSize: theme.fontSize.normal,
-    color: theme.colors.textPrimary,
-    marginVertical: theme.spacing(0.5),
-  },
-
-  tarjetaTextoNotas: {
-    fontSize: theme.fontSize.normal,
-    color: "#666",
-    marginVertical: theme.spacing(0.5),
-    fontStyle: "italic",
-  },
-
-  tarjetaTextoDescripcion: {
-    fontSize: theme.fontSize.normal,
-    color: "#666",
-    marginVertical: theme.spacing(0.5),
-    fontStyle: "italic",
-  },
-
-  estadoBadge: {
+  tipoBadge: {
     backgroundColor: "#4CAF50",
     paddingVertical: theme.spacing(0.5),
     paddingHorizontal: theme.spacing(1.5),
-    borderRadius: 12,
-  },
-
-  estadoTexto: {
-    color: "#fff",
-    fontSize: theme.fontSize.normal,
-    fontWeight: "bold",
-    textTransform: "capitalize",
-  },
-
-  tipoBadge: {
-    paddingVertical: theme.spacing(0.5),
-    paddingHorizontal: theme.spacing(1.5),
-    borderRadius: 12,
+    borderRadius: 6,
   },
 
   tipoTexto: {
@@ -266,52 +154,31 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  estadosContainer: {
-    marginVertical: theme.spacing(1),
+  tarjetaTexto: {
+    fontSize: theme.fontSize.normal,
+    color: theme.colors.textPrimary,
+    marginVertical: theme.spacing(0.5),
   },
 
-  estadosLabel: {
+  advertenciaContainer: {
+    backgroundColor: "#FFE6E6",
+    borderLeftWidth: 4,
+    borderLeftColor: "#FF6B6B",
+    padding: theme.spacing(2),
+    borderRadius: 8,
+    marginVertical: theme.spacing(2),
+  },
+
+  advertencia: {
     fontSize: theme.fontSize.normal,
+    color: "#FF6B6B",
     fontWeight: "bold",
-    color: theme.colors.primary,
-    marginBottom: theme.spacing(0.5),
+    textAlign: "center",
   },
 
-  estadosList: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 6,
-  },
-
-  estadoTag: {
-    backgroundColor: theme.colors.primary,
-    paddingVertical: theme.spacing(0.5),
-    paddingHorizontal: theme.spacing(1),
-    borderRadius: 6,
-  },
-
-  estadoTagText: {
-    color: "#fff",
-    fontSize: 12,
-    fontWeight: "500",
-    textTransform: "capitalize",
-  },
-
-  activoBadge: {
-    marginTop: theme.spacing(1),
-  },
-
-  activoTexto: {
-    fontSize: theme.fontSize.normal,
-    fontWeight: "600",
-  },
-
-  botonesAccion: {
+  botonesContainer: {
     flexDirection: "column",
     gap: 8,
-    marginTop: theme.spacing(3),
-    ...(Platform.OS === "web" && {
-      gap: 12,
-    }),
+    marginTop: theme.spacing(2),
   },
 });
