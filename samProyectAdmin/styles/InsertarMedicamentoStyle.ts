@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: theme.fontSize.title,
     fontWeight: "bold",
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     marginVertical: theme.spacing(3),
     textAlign: "center",
     ...(Platform.OS === "web" && {
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.secondary,
     width: "100%",
     paddingVertical: theme.spacing(2),
-    borderRadius: 8,
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
     ...(Platform.OS === "web" && {
@@ -101,10 +101,12 @@ export const styles = StyleSheet.create({
   },
 
   buttonInsert: {
+    borderRadius: 30,
     backgroundColor: theme.colors.primary,
   },
 
   buttonCancel: {
+    borderRadius: 30,
     backgroundColor: theme.colors.error,
   },
 

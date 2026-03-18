@@ -5,8 +5,13 @@ export const medicamentosAdminService = {
   async crearMedicamento(medicamento: Omit<Medicamento, 'ID_Medicamento'>) {
     try {
       const { data, error } = await supabase
-        .from('medicamentos')
-        .insert([{ ID_Medicamento: crypto.randomUUID(), ...medicamento }])
+      //medicamentos -> Medicamentos
+        .from('Medicamentos')
+        .insert([{ 
+          ID_Medicamento: crypto.randomUUID(), 
+          ...medicamento,
+          Tipo: [medicamento.Tipo]
+        }])
         .select()
         .single();
 
@@ -21,8 +26,12 @@ export const medicamentosAdminService = {
   async actualizarMedicamento(idMedicamento: string, actualizaciones: Partial<Medicamento>) {
     try {
       const { data, error } = await supabase
-        .from('medicamentos')
-        .update(actualizaciones)
+      //medicamentos -> Medicamentos
+        .from('Medicamentos')
+        .update({
+          ...actualizaciones,
+          ...(actualizaciones.Tipo && { Tipo: [actualizaciones.Tipo] })
+        })
         .eq('ID_Medicamento', idMedicamento)
         .select()
         .single();
@@ -38,7 +47,8 @@ export const medicamentosAdminService = {
   async eliminarMedicamento(idMedicamento: string) {
     try {
       const { error } = await supabase
-        .from('medicamentos')
+      //medicamentos -> Medicamentos
+        .from('Medicamentos')
         .delete()
         .eq('ID_Medicamento', idMedicamento);
 
@@ -52,12 +62,17 @@ export const medicamentosAdminService = {
   async obtenerTodosMedicamentos() {
     try {
       const { data, error } = await supabase
-        .from('medicamentos')
+      //medicamentos -> Medicamentos
+        .from('Medicamentos')
         .select('*')
         .order('Nombre');
 
       if (error) throw error;
-      return data;
+      // Normalizar Tipo de array a string
+      return data?.map(m => ({
+        ...m,
+        Tipo: Array.isArray(m.Tipo) ? m.Tipo[0] : m.Tipo
+      }));
     } catch (error) {
       console.error('Error al obtener medicamentos:', error);
       throw error;
@@ -67,13 +82,17 @@ export const medicamentosAdminService = {
   async obtenerStockBajo(umbral: number = 10) {
     try {
       const { data, error } = await supabase
-        .from('medicamentos')
+      //medicamentos -> Medicamentos
+        .from('Medicamentos')
         .select('*')
         .lt('Stock', umbral)
         .eq('Activo', true);
 
       if (error) throw error;
-      return data;
+      return data?.map(m => ({
+        ...m,
+        Tipo: Array.isArray(m.Tipo) ? m.Tipo[0] : m.Tipo
+      }));
     } catch (error) {
       console.error('Error al obtener medicamentos con stock bajo:', error);
       throw error;

@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: theme.fontSize.title,
     fontWeight: "bold",
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     marginVertical: theme.spacing(3),
     textAlign: "center",
     ...(Platform.OS === "web" && {
@@ -87,7 +87,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     paddingVertical: theme.spacing(2),
-    borderRadius: 8,
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
     gap: 8,
@@ -99,14 +99,17 @@ export const styles = StyleSheet.create({
   },
 
   buttonSearch: {
+    borderRadius: 30,
     backgroundColor: theme.colors.primary,
   },
 
   buttonInfo: {
+    borderRadius: 30,
     backgroundColor: "#2196F3",
   },
 
   buttonSecondary: {
+    borderRadius: 30,
     backgroundColor: theme.colors.secondary,
     flex: undefined,
     width: "100%",
@@ -114,6 +117,7 @@ export const styles = StyleSheet.create({
   },
 
   buttonCancel: {
+    borderRadius: 30,
     backgroundColor: theme.colors.error,
     flex: undefined,
     width: "100%",

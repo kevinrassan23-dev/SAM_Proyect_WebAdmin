@@ -9,7 +9,7 @@ function MostrarPedidos() {
   // ❌ AQUÍ VA LA LÓGICA DE BÚSQUEDA Y FILTRO DE PEDIDOS
 
   const volver = () => {
-    router.back();
+    router.push("/pages/DisplaySHOP");
   };
 
   return (
@@ -30,11 +30,11 @@ function MostrarPedidos() {
 
           <View style={styles.botonesBusqueda}>
             <Pressable style={[styles.button, styles.buttonSearch]}>
-              <Text style={styles.buttonText}>Buscar</Text>
+              <Text style={styles.buttonText}>BUSCAR</Text>
             </Pressable>
 
             <Pressable style={[styles.button, styles.buttonInfo]}>
-              <Text style={styles.buttonText}>Mostrar Todos</Text>
+              <Text style={styles.buttonText}>MOSTRAR TODOS</Text>
             </Pressable>
           </View>
 
@@ -73,11 +73,11 @@ function MostrarPedidos() {
 
           <View style={styles.botonesAccion}>
             <Pressable style={[styles.button, styles.buttonSecondary]}>
-              <Text style={styles.buttonText}>Limpiar Campos</Text>
+              <Text style={styles.buttonText}>LIMPIAR CAMPOS</Text>
             </Pressable>
 
-            <Pressable style={[styles.button, styles.buttonCancel]} onPress={volver}>
-              <Text style={styles.buttonText}>Volver</Text>
+            <Pressable style={[styles.button,]} onPress={volver}>
+              <Text style={styles.buttonText}>VOLVER</Text>
             </Pressable>
           </View>
         </View>

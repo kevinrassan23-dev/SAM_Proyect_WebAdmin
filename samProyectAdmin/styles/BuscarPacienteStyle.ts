@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: theme.fontSize.title,
     fontWeight: "bold",
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     marginVertical: theme.spacing(3),
     textAlign: "center",
     ...(Platform.OS === "web" && {
@@ -112,6 +112,11 @@ export const styles = StyleSheet.create({
     ...(Platform.OS === "web" && {
       fontSize: 16,
     }),
+  },
+
+  buttonInsert: {
+    borderRadius: 30,
+    backgroundColor: theme.colors.primary,
   },
 
   resultadosContainer: {

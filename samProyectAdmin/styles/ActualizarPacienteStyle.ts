@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: theme.fontSize.title,
     fontWeight: "bold",
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     marginVertical: theme.spacing(3),
     textAlign: "center",
     ...(Platform.OS === "web" && {
@@ -80,10 +80,9 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.secondary,
     width: "100%",
     paddingVertical: theme.spacing(2),
-    borderRadius: 8,
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: theme.spacing(1),
     ...(Platform.OS === "web" && {
       paddingVertical: theme.spacing(2.5),
       cursor: "pointer" as any,
@@ -91,16 +90,18 @@ export const styles = StyleSheet.create({
     }),
   },
 
-  buttonSearch: {
-    backgroundColor: theme.colors.primary,
-  },
-
-  buttonUpdate: {
-    backgroundColor: "#FF9800",
-  },
-
   buttonCancel: {
     backgroundColor: theme.colors.error,
+    width: "100%",
+    paddingVertical: theme.spacing(2),
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    ...(Platform.OS === "web" && {
+      paddingVertical: theme.spacing(2.5),
+      cursor: "pointer" as any,
+      transition: "all 0.3s ease" as any,
+    }),
   },
 
   buttonText: {
@@ -113,9 +114,20 @@ export const styles = StyleSheet.create({
     }),
   },
 
+  buttonInsert: {
+    borderRadius: 30,
+    backgroundColor: theme.colors.primary,
+  },
+
   botonesContainer: {
     flexDirection: "column",
     gap: 8,
     marginTop: theme.spacing(2),
   },
+
+  inputReadonly: {
+    backgroundColor: "#f0f0f0",    // Fondo gris claro
+    color: "#999",                 // Texto gris
+    opacity: 0.6,                  // Más transparente
+  }
 });

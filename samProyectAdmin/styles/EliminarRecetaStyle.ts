@@ -80,7 +80,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.secondary,
     width: "100%",
     paddingVertical: theme.spacing(2),
-    borderRadius: 8,
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
     marginBottom: theme.spacing(1),
@@ -92,14 +92,17 @@ export const styles = StyleSheet.create({
   },
 
   buttonSearch: {
+    borderRadius: 30,
     backgroundColor: theme.colors.primary,
   },
 
   buttonDelete: {
+    borderRadius: 30,
     backgroundColor: theme.colors.error,
   },
 
   buttonCancel: {
+    borderRadius: 30,
     backgroundColor: theme.colors.error,
   },
 
