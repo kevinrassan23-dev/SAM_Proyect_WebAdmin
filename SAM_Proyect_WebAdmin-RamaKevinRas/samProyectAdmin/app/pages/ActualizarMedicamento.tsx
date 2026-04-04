@@ -4,10 +4,12 @@ import { router } from "expo-router";
 import { styles } from "../../styles/ActualizarMedicamentoStyle";
 import { medicamentosAdminService } from "../../services/api/medicamentosAdmin";
 import { Medicamento } from "@/types";
+import { useAuth } from "../hooks/useAuth";//añadir este import
 
 //Logica implemntada
 
 function ActualizarMedicamento() {
+  useAuth();//Esto es lo nuevo
   const [busqueda, setBusqueda] = useState("");
   const [encontrado, setEncontrado] = useState(false);
   const [loading, setLoading] = useState(false);
