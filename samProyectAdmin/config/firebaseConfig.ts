@@ -1,6 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
+/**
+ * UTILERÍA: Genera un timestamp actual para los logs
+ */
+const getTimestamp = () => new Date().toLocaleString();
+
+// 1. CONFIGURACIÓN DEL PROYECTO
 const firebaseConfig = {
   apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -10,17 +16,19 @@ const firebaseConfig = {
   appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
-console.log("🔍 Firebase Config:");
-console.log("✅ PROJECT_ID:", firebaseConfig.projectId ? "ENCONTRADO" : "❌ NO ENCONTRADO");
-console.log("✅ API_KEY:", firebaseConfig.apiKey ? `${firebaseConfig.apiKey.substring(0, 20)}...` : "❌ NO ENCONTRADO");
-console.log("✅ AUTH_DOMAIN:", firebaseConfig.authDomain ? "ENCONTRADO" : "❌ NO ENCONTRADO");
-
+// 2. VALIDACIÓN DE VARIABLES CRÍTICAS
 if (!firebaseConfig.projectId || !firebaseConfig.apiKey) {
-  throw new Error("❌ FALTAN VARIABLES DE ENTORNO EN .env.local");
+  throw new Error(`[${getTimestamp()}] FALTAN VARIABLES DE ENTORNO EN .env.local`);
 }
 
+// 3. INICIALIZACIÓN DE SERVICIOS
 const app = initializeApp(firebaseConfig);
+
+/**
+ * Exportación de la base de datos Firestore
+ */
 export const db = getFirestore(app);
 
-console.log("✅ Firebase inicializado correctamente");
-console.log("📍 Proyecto:", firebaseConfig.projectId);
+// 4. LOGS DE ÉXITO
+console.log(`[${getTimestamp()}] Firebase inicializado correctamente`);
+console.log(`[${getTimestamp()}] Proyecto Firebase ID:`, firebaseConfig.projectId);

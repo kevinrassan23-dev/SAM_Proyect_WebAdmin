@@ -1,20 +1,17 @@
-export interface Pedido {
-    ID_Pedido: string;
-    DNI_Paciente: string;
-    Tipo_Paciente: 'activo' | 'pensionista' | 'mutualista';
-    Descuento_Aplicado: number;
-    Precio_Total: number;
-    Estado: string[];
-    Fecha_Hora: Date;
-    Notas?: string;
-}
 
-export interface PedidoMedicamento {
-    ID_Pedido_Medicamento: string;
-    ID_Pedido: string;
-    ID_Medicamento: string;
-    ID_Receta_Medicamento?: string | null;
-    Cantidad: number;
-    Precio_Unitario: number;
-    Subtotal: number;
+/**
+ * INTERFAZ DE PEDIDO
+ */
+export interface Transaccion {
+    id: string;
+    ID_Pedido: number;
+    dni_paciente: string;
+    monto: number;
+    metodo_pago: string;
+    estado: string;
+    codigo_transaccion: string;
+    fecha_inicio: string;
+    fecha_completacion: string;
+    created_at: string;
+    updated_at: string;
 }

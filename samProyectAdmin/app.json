@@ -7,7 +7,6 @@
     "icon": "./assets/images/app_icon.png",
     "scheme": "samproyectadmin",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -16,11 +15,11 @@
         "foregroundImage": "./assets/images/app_icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
+      "bundler": "metro",
       "favicon": "./assets/images/app_icon.png"
     },
     
