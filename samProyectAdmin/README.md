@@ -354,6 +354,7 @@ npm install expo@51.0.39 expo-router@3.5.24 expo-constants@16.0.2 expo-font@12.0
 ### S.A.M-WEB
 
 **Pantallas:**
+- **DrawerAdmin:** Menú desplegable de acceso a las diferentes opciones según las responsabilidades de cada rol.
 - **LoginAdmin:** Pantalla de autenticación para administradores con rate limiting.
 - **MostrarPedidos:** Panel principal que muestra el historial de transacciones en tabla.
 - **InsertarAdmin:** Registra un nuevo administrador con rol y contraseña cifrada.
