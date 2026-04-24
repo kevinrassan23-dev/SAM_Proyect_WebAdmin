@@ -1,3 +1,2 @@
-export * from './pacientes.service';
-export * from './recetas.service';
-export * from './recetas_medicamentos.service';
+export * from './pacientes';
+export * from './recetas';

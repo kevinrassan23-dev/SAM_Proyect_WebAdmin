@@ -1,3 +1,7 @@
+
+/**
+ * INTERFAZ DE PACIENTE
+ */
 export interface Paciente {
     DNI: string;
     Nombre_Paciente: string;
